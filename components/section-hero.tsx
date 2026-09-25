@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { hero } from "@/content";
-import { Highlight, Sparkle, SparkLines } from "./decor";
+import { Highlight, Sparkle } from "./decor";
 import { WaitlistForm } from "./forms";
 import { Reveal } from "./reveal";
 
@@ -68,19 +68,11 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="absolute -left-3 -top-5 -rotate-[5deg] sm:-left-7">
-            <span className="sticky-note inline-block text-xl font-bold sm:text-2xl">
-              {hero.stickyNote}
-            </span>
-          </div>
-
-          {/* floating spec chip */}
-          <div className="absolute -bottom-4 right-3 rotate-[-3deg] rounded-2xl border-2 border-green bg-cream px-4 py-2.5 shadow-[3px_4px_0_rgba(20,81,47,0.18)] sm:right-6">
+          {/* single floating spec chip — reinforces "specs on the front" */}
+          <div className="absolute -bottom-4 -left-2 rotate-[3deg] rounded-2xl border-2 border-green bg-cream px-4 py-2.5 shadow-[3px_4px_0_rgba(20,81,47,0.18)] sm:-left-5">
             <p className="font-display text-lg font-black leading-none text-green">GSM 150</p>
             <p className="text-[0.65rem] font-bold uppercase tracking-wide text-tomato">On the front</p>
           </div>
-
-          <SparkLines className="absolute -right-1 top-8 h-11 w-11 rotate-12" />
         </Reveal>
       </div>
     </section>

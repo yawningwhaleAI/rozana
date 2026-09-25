@@ -204,6 +204,16 @@ export const people = {
       role: "Sourcing",
       line: "Eastern-region raw-material access, including JK Paper and West Coast Paper Mills.",
     },
+    {
+      name: "Aryan Singh",
+      role: "Sales & Marketing",
+      line: "Leads sales, marketing, growth and digital — turning a better product into demand across quick commerce, retail and institutions.",
+    },
+    {
+      name: "Pragya Rathi",
+      role: "Finance",
+      line: "Leads finance — pricing, margins and the discipline that keeps everyday quality affordable.",
+    },
   ],
 };
 

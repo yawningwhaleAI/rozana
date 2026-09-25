@@ -26,10 +26,10 @@ export default function Home() {
       <main>
         <Hero />
         <Marquee />
-        <Story />
+        <Products />
         <Problem />
         <SpecPanel />
-        <Products />
+        <Story />
         <WhyDifferent />
         <People />
         <WaitlistBand />
