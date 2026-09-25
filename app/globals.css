@@ -13,6 +13,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -20,9 +21,24 @@ body {
   color: var(--charcoal);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
-/* Respect users who prefer no motion */
+/* Subtle paper grain over the whole page for a tactile, premium feel. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -34,13 +50,21 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
-/* Visible, on-brand focus states for accessibility */
 *:focus-visible {
   outline: 3px solid var(--navy);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+::selection {
+  background: var(--yellow);
+  color: var(--green);
 }
 
 @layer components {
@@ -54,14 +78,13 @@ body {
       transparent 99.5%
     );
     background-repeat: no-repeat;
-    background-size: 100% 62%;
-    background-position: 0 78%;
-    padding: 0 0.12em;
+    background-size: 100% 60%;
+    background-position: 0 82%;
+    padding: 0 0.14em;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
   }
 
-  /* Dark green rounded pill section labels */
   .pill {
     display: inline-flex;
     align-items: center;
@@ -70,39 +93,80 @@ body {
     color: var(--cream);
     border-radius: 999px;
     padding: 0.4rem 1rem;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
+  .pill--ghost {
+    background: transparent;
+    color: var(--green);
+    border: 2px solid rgba(20, 81, 47, 0.25);
+  }
 
-  /* Sticky-note callout, slightly rotated */
   .sticky-note {
     background-color: var(--yellow);
     color: var(--charcoal);
-    padding: 0.9rem 1.1rem;
+    padding: 0.85rem 1.05rem;
     border-radius: 4px;
-    box-shadow: 2px 3px 0 rgba(43, 43, 43, 0.12);
+    box-shadow: 3px 4px 0 rgba(43, 43, 43, 0.14);
     font-family: var(--font-hand), cursive;
-    line-height: 1.25;
+    line-height: 1.2;
+  }
+
+  /* Chunky brand buttons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    background: var(--tomato);
+    color: var(--cream);
+    font-weight: 700;
+    padding: 0.9rem 1.6rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 6px 0 rgba(20, 81, 47, 0.18);
   }
 }
 
-/* Hand-drawn red underline that draws in on reveal */
+/* Hand-drawn red underline */
 .underline-draw {
   position: relative;
   display: inline-block;
 }
-.underline-draw::after {
-  content: "";
-  position: absolute;
-  left: -2%;
-  right: -2%;
-  bottom: -0.16em;
-  height: 0.42em;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='16' viewBox='0 0 200 16' fill='none'%3E%3Cpath d='M2 11C40 4 90 3 130 7c25 2.5 45 4 68 1' stroke='%23D6412B' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  transform-origin: left center;
-  transform: scaleX(1);
+
+/* Scroll reveal — set by IntersectionObserver adding .is-visible */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Marquee ticker */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

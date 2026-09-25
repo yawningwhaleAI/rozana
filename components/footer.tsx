@@ -14,8 +14,8 @@ function InstagramIcon({ className = "" }: { className?: string }) {
 export function Footer() {
   return (
     <footer className="bg-green text-cream">
-      <div className="mx-auto max-w-content px-4 py-14 sm:px-6">
-        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+      <div className="mx-auto max-w-content px-4 py-16 sm:px-6">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="max-w-sm">
             <p className="relative inline-block font-display text-3xl font-black">
               {site.name}
@@ -27,22 +27,38 @@ export function Footer() {
             <p className="mt-3 max-w-xs text-sm text-cream/70">{footer.blurb}</p>
           </div>
 
-          <div className="flex flex-col gap-4 text-sm">
-            <a
-              href={`mailto:${footer.email}`}
-              className="font-semibold text-cream underline decoration-yellow decoration-2 underline-offset-4"
-            >
-              {footer.email}
-            </a>
-            <a
-              href={footer.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-semibold text-cream/90 hover:text-yellow"
-            >
-              <InstagramIcon className="h-5 w-5" />
-              Follow on Instagram
-            </a>
+          <nav aria-label="Footer" className="text-sm">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-cream/50">Explore</p>
+            <ul className="space-y-2.5">
+              {footer.nav.map((l) => (
+                <li key={l.href}>
+                  <a href={l.href} className="text-cream/85 hover:text-yellow">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="text-sm">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-cream/50">Get in touch</p>
+            <div className="flex flex-col gap-3">
+              <a
+                href={`mailto:${footer.email}`}
+                className="font-semibold text-cream underline decoration-yellow decoration-2 underline-offset-4"
+              >
+                {footer.email}
+              </a>
+              <a
+                href={footer.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-semibold text-cream/90 hover:text-yellow"
+              >
+                <InstagramIcon className="h-5 w-5" />
+                Follow on Instagram
+              </a>
+            </div>
           </div>
         </div>
 

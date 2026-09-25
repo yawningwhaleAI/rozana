@@ -1,6 +1,7 @@
 /**
  * content.ts — the single source of truth for all copy on the page.
  * Edit text here; components never hardcode strings.
+ * Wrap a word/phrase in [[double brackets]] to give it the yellow highlighter.
  */
 
 export const site = {
@@ -13,10 +14,17 @@ export const site = {
     "Everyday home and kitchen paper essentials — better made, honestly labelled, and built to be seen. Join the launch waitlist in Delhi NCR.",
 };
 
+export const announcement = {
+  text: "Launching in Delhi NCR",
+  detail: "First 500 waitlist members get the launch box at 20% off.",
+  cta: "Join the waitlist",
+  href: "#waitlist",
+};
+
 export const nav = {
   links: [
-    { label: "The problem", href: "#problem" },
-    { label: "Why us", href: "#spec" },
+    { label: "Why Rozana", href: "#story" },
+    { label: "The number", href: "#spec" },
     { label: "Products", href: "#products" },
     { label: "Our team", href: "#people" },
     { label: "Talk to us", href: "#contact" },
@@ -25,21 +33,52 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: "Launching in Delhi NCR",
-  // The word wrapped in [[ ]] gets the yellow highlighter.
+  eyebrow: "Home & kitchen paper essentials",
   headline: "Nobody remembers the [[paper]] they bought.",
   sub: "We're changing that. Everyday home and kitchen essentials — better made, honestly labelled, and built to be seen.",
   emailPlaceholder: "you@example.com",
   cta: "Join the waitlist",
   perk: "First 500 members get the launch box at 20% off.",
+  trust: "Made by the team behind Origami & 10 On Tissues.",
   imageAlt:
     "Rozana Pocket Napkins pack on a table with chai and samosas — 'Small pack. Big situations.'",
   stickyNote: "Small pack. Big situations.",
 };
 
+// The real pack taglines — used for the scrolling ticker.
+export const ticker = [
+  "Strong for real life.",
+  "Rozana ke liye, hamesha yahan.",
+  "Good food deserves good napkins.",
+  "Essentials, better packed.",
+  "Less mess. More good food.",
+  "Khana freshh, rozana.",
+  "Ghar ka kachra, tension ka nahi.",
+  "Khaa peeyo, bina sochke.",
+];
+
+export const story = {
+  pill: "Why Rozana",
+  heading: "Everyday paper is invisible. [[We're making it visible.]]",
+  paragraphs: [
+    "Every week, Indian homes buy kitchen towels, tissues, napkins and rolls — and forget the brand by the time the bag is unpacked. The category runs on one trick: say \"soft\", say \"strong\", say \"premium\", and print nothing you can actually check.",
+    "So quality stays hidden and price quietly wins. We think that's backwards. Rozana prints the numbers that decide quality — GSM, sheet size, absorbency — right on the front. And we design packs you'd leave on the counter, not hide under the sink.",
+  ],
+  quote: "Made by the people who built India's tissue brands for 20 years — so we choose the fibre per product, and we can prove it.",
+};
+
+export const stats = {
+  items: [
+    { value: "20 yrs", label: "building India's paper & tissue brands" },
+    { value: "₹0 → ₹100 cr", label: "ARR built at 10 On Tissues, in two years" },
+    { value: "8", label: "everyday essentials, honestly labelled" },
+    { value: "Delhi NCR", label: "where we launch first" },
+  ],
+};
+
 export const problem = {
   pill: "The problem",
-  heading: "Buying paper is a guessing game.",
+  heading: "Buying paper is a [[guessing game.]]",
   cards: [
     {
       title: "Quality is invisible",
@@ -60,7 +99,6 @@ export const spec = {
   pill: "What makes us different",
   heading: "We print the number [[nobody prints.]]",
   body: 'Everyone prints "2 Ply". Almost nobody prints GSM — the grammage that actually decides softness and strength. We put GSM, sheet size and absorbency on the front, so you can judge the product before you buy it, not after.',
-  // The mock pack panel
   panel: {
     brand: "Rozana",
     product: "Kitchen Roll",
@@ -77,7 +115,7 @@ export const spec = {
 
 export const products = {
   pill: "The range",
-  heading: "Packs worth leaving on the counter.",
+  heading: "Packs worth leaving [[on the counter.]]",
   sub: "The packs are the product. Illustrated, honest, and made to be seen — not hidden.",
   items: [
     {
@@ -121,7 +159,7 @@ export const products = {
 
 export const why = {
   pill: "Why it's different",
-  heading: "Five words we can actually back up.",
+  heading: "Five words we can [[actually back up.]]",
   points: [
     {
       title: "Made in our own supply chain",
@@ -173,6 +211,11 @@ export const contact = {
   pill: "Talk to us",
   heading: "Talk to us",
   sub: "Buying for a hotel, café or office? Want to stock Rozana? Or just have something to say? Write to us.",
+  audience: [
+    "Hotels, cafés & cloud kitchens",
+    "Offices & caterers",
+    "Retail stocking & partnerships",
+  ],
   fields: {
     name: { label: "Name", placeholder: "Your name", required: true },
     email: { label: "Email", placeholder: "you@example.com", required: true },
@@ -216,6 +259,12 @@ export const footer = {
   blurb: "Everyday home and kitchen paper essentials, made honest.",
   email: "hello.rozana@gmail.com",
   instagram: "https://instagram.com/rozana",
+  nav: [
+    { label: "Why Rozana", href: "#story" },
+    { label: "Products", href: "#products" },
+    { label: "Our team", href: "#people" },
+    { label: "Talk to us", href: "#contact" },
+  ],
   legal: `© ${new Date().getFullYear()} Rozana. All rights reserved.`,
   madeIn: "Made in India.",
 };
