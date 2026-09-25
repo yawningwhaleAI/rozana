@@ -7,7 +7,7 @@
 export const site = {
   name: "Rozana",
   tagline: "Everyday, better.",
-  email: "hello.rozana@gmail.com",
+  email: "aryann.singh21@gmail.com",
   instagram: "https://instagram.com/rozana",
   metaTitle: "Rozana — Everyday, better.",
   metaDescription:
@@ -188,31 +188,41 @@ export const people = {
   pill: "The people behind it",
   heading: "Built by people who have made this category for [[20 years.]]",
   sub: "This is not a first attempt. It's what happens when the people who built India's tissue brands start their own.",
-  bios: [
+  groups: [
     {
-      name: "Rajesh Singh",
-      role: "Operations",
-      line: "Six-plus years as All India Head at Origami, then took 10 On Tissues from ₹0 to ₹100 crore ARR in two years.",
+      label: "Founders & leadership",
+      members: [
+        {
+          name: "Satyajit",
+          role: "Founder · Sourcing",
+          line: "Eastern-region raw-material access, including JK Paper and West Coast Paper Mills.",
+        },
+        {
+          name: "Aryan Singh",
+          role: "Founder · Sales & Marketing",
+          line: "Leads sales, marketing, growth and digital — turning a better product into demand across quick commerce, retail and institutions.",
+        },
+        {
+          name: "Pragya Rathi",
+          role: "Chief Financial Officer",
+          line: "Runs finance — pricing, margins and the discipline that keeps everyday quality affordable.",
+        },
+      ],
     },
     {
-      name: "Anup Kapoor",
-      role: "Brand",
-      line: "20+ years in FMCG. Former CXO at Emami, Himalaya and All Out.",
-    },
-    {
-      name: "Satyajit",
-      role: "Sourcing",
-      line: "Eastern-region raw-material access, including JK Paper and West Coast Paper Mills.",
-    },
-    {
-      name: "Aryan Singh",
-      role: "Sales & Marketing",
-      line: "Leads sales, marketing, growth and digital — turning a better product into demand across quick commerce, retail and institutions.",
-    },
-    {
-      name: "Pragya Rathi",
-      role: "Finance",
-      line: "Leads finance — pricing, margins and the discipline that keeps everyday quality affordable.",
+      label: "Board",
+      members: [
+        {
+          name: "Rajesh Singh",
+          role: "Board member",
+          line: "Six-plus years as All India Head at Origami, then took 10 On Tissues from ₹0 to ₹100 crore ARR in two years.",
+        },
+        {
+          name: "Anup Kapoor",
+          role: "Board member",
+          line: "20+ years in FMCG. Former CXO at Emami, Himalaya and All Out.",
+        },
+      ],
     },
   ],
 };
@@ -250,7 +260,7 @@ export const contact = {
   mailtoIntro: "Prefer email? Write to us at",
   mailtoOutro: "— we reply within two working days.",
   success: "Got it. We'll get back to you within two working days.",
-  error: "Something went wrong. Email us directly at hello.rozana@gmail.com.",
+  error: "Something went wrong. Email us directly at aryann.singh21@gmail.com.",
 };
 
 export const waitlist = {
@@ -261,13 +271,13 @@ export const waitlist = {
   cta: "Join the waitlist",
   perk: "First 500 members get the launch box at 20% off.",
   success: "You're on the list. We'll email you before we launch.",
-  error: "Something went wrong. Email us directly at hello.rozana@gmail.com.",
+  error: "Something went wrong. Email us directly at aryann.singh21@gmail.com.",
 };
 
 export const footer = {
   tagline: "Everyday, better.",
   blurb: "Everyday home and kitchen paper essentials, made honest.",
-  email: "hello.rozana@gmail.com",
+  email: "aryann.singh21@gmail.com",
   instagram: "https://instagram.com/rozana",
   nav: [
     { label: "Why Rozana", href: "#story" },
