@@ -41,8 +41,8 @@ export const hero = {
   perk: "First 500 members get the launch box at 20% off.",
   trust: "Made by the team behind Origami & 10 On Tissues.",
   imageAlt:
-    "Rozana Pocket Napkins pack on a table with chai and samosas — 'Small pack. Big situations.'",
-  stickyNote: "Small pack. Big situations.",
+    "The Rozana range — Pocket Napkins, Facial Tissues, Party Napkins, Toilet Rolls and Kitchen Roll, each with its illustrated pack and tagline.",
+  stripCaption: "One range. Every everyday mess, sorted.",
 };
 
 // The real pack taglines — used for the scrolling ticker.
